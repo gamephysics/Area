@@ -6,8 +6,8 @@
 
 업로드한 코드는 크로스파이어의 연맹영역 점유 규칙에 기반된 코드 입니다.
 
-<img src="./Assets/Art/Area1.png" width="40%" height="30%"></img>
-<img src="./Assets/Art/Area2.png" width="40%" height="30%"></img>
+<img src="./Assets/Art/Area1.png" width="40%" height="40%"></img>
+<img src="./Assets/Art/Area2.png" width="40%" height="40%"></img>
 
 ## Youtube
 
