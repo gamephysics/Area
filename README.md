@@ -19,6 +19,7 @@ Unity 2020.3.2f1 를 기반으로 컴파일되도록 작성하였습니다.
 
 2021년 6월 현재 가장최신 프로젝트에 탑제되는 URP, DOTS 기반의 코드와 리소스들로 구성하였습니다.
 
+<img src="./Assets/Art/Area3.png" width="30%" height="30%"></img>
 
 ## Description
 
