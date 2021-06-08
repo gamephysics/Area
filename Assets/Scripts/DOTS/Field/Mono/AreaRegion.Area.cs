@@ -116,7 +116,7 @@ public struct CArea
             start   = math.clamp(start, GLOBAL_CONST.MAP_MIN, GLOBAL_CONST.MAP_MAX);
             end     = math.clamp(end,   GLOBAL_CONST.MAP_MIN, GLOBAL_CONST.MAP_MAX);
         }
-        return new RectInt(start.x, start.y, (end.x - start.x), (end.y - start.y));
+        return new RectInt(start.x, start.y, (end.x - start.x) + 1, (end.y - start.y) + 1);
     }
 }
 
