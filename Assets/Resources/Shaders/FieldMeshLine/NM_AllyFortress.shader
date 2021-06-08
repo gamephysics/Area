@@ -38,6 +38,7 @@ Shader "COF/NM_AllyFotress"
 		{
 			Pass 
 			{
+				// 이부분을 해제하면 겹치는 부분에의 표시가 거시기하다. 
 				//Stencil
 				//{
 				//	Ref 0
@@ -96,12 +97,9 @@ Shader "COF/NM_AllyFotress"
 					o.vertex = UnityObjectToClipPos(v.vertex);
 					float maxHeight = 250;
 					float min = -400;
-					//float s = (maxHeight - _WorldSpaceCameraPos.y) / (maxHeight);
 					float s = saturate((min - _WorldSpaceCameraPos.y * 0.65) / (min - maxHeight));
-					//float s = saturate(maxHeight - _WorldSpaceCameraPos.y / (maxHeight - 50);
 					float offset = lerp(_UVOffset_Start * 0.01, _UVOffset_End * 0.01, s);
 					s = lerp(1, 0.02, s); //_TexScale
-					//s = 1;
 					float time = fmod(_Time, 1);
 
 					o.uv.xy = applyMatrix(
@@ -120,7 +118,6 @@ Shader "COF/NM_AllyFotress"
 					
 					return o;
 				}
-				
 				
 				fixed4 frag(v2f i) : COLOR
 				{

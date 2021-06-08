@@ -4,7 +4,6 @@ Shader "COF/NM_FleetTrail"
 {
     Properties
     {
-		//[MaterialToggle(FORCE_CROSSFADE)] _ForceCrossFade("Force CrossFade ?", Float) = 0
 		[Enum(Additive, 0, AlphaBlend, 1, Invert, 2, Custom, 3)]_BlendMode("Blend Mode", Float) = 0
 		[Enum(UnityEngine.Rendering.BlendMode)] _SrcBlend("__src", Float) = 5
 		[Enum(UnityEngine.Rendering.BlendMode)] _DstBlend("__dst", Float) = 1
@@ -52,12 +51,8 @@ Shader "COF/NM_FleetTrail"
 				#pragma vertex vert
 				#pragma fragment frag
 				#include "UnityCG.cginc"
-				//#include "../CF/Cginc/cginc_custom_define.cginc"
-				//#pragma multi_compile _ _USE_CROSSFADE
-				//#pragma multi_compile _ CROSSFADE_ENEMY 
 
 				float4 _LineColor;
-				//float2 _G_FieldFadeInfo;
 				sampler2D _MaskTex;
 				float4 _MaskTex_ST;
 				
@@ -110,7 +105,6 @@ Shader "COF/NM_FleetTrail"
 					v.texcoord.x = v.texcoord.x * _Count_U;
 					v.texcoord.y = v.texcoord.y * _Count_V;
 					float maxHeight = 30;
-					//float s = (maxHeight - _WorldSpaceCameraPos.y) / (maxHeight);
 					float s = saturate(_WorldSpaceCameraPos.y / maxHeight);
 					s = lerp(1, 0.3, saturate(s)); //_TexScale
 
@@ -133,17 +127,7 @@ Shader "COF/NM_FleetTrail"
 						)
 					) + float2(_Speed_X * -2, _Speed_Y) * time;
 
-					//o.uv = (TRANSFORM_TEX(v.texcoord.xy,_MaskTex)) + fixed2(_Speed_X * -1, _Speed_Y) * time;
 					o.color = v.color * _LineColor * 3;
-//ifdef _USE_CROSSFADE
-//					#ifdef CROSSFADE_ENEMY
-//						o.color.a *= scaleX;
-//					#else
-//						float fadeTime = saturate((_Time.y - _G_FieldFadeInfo.x) * 3);
-//						fadeTime = lerp(fadeTime, 1 - fadeTime, _G_FieldFadeInfo.y);
-//						o.color.a *= fadeTime;
-//					#endif
-//endif
 					return o;
 				}
 				
