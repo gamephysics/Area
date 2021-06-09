@@ -104,11 +104,11 @@ public struct CArea
     // volume   : 연맹건물의 CELL 점유 크기
     // size     : 연맹영역 크기 WIDTH == HEIGHT
     // clippable: false == Unity 에서 연맹영역을 확보하는 건물을 배치시킬경우 연맹영역의 표시는 CLIPPING 하지 않는다.
-    public static RectInt GetRect(int2 pos, int volume, int size, bool clippable)
+    public static RectInt GetRect(int2 pos, Int32 volume, Int32 size, bool clippable)
     {
-        Int32 radius= size / 2;
-        int2 start  = pos - radius;
-        int2 end    = pos + volume - 1 + radius;
+        Int32 half  = size / 2;
+        int2  start = pos - half;
+        int2  end   = pos + volume - 1 + (size - half);
 
         if (clippable)
         {
