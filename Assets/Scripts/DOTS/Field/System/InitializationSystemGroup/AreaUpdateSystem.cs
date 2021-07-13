@@ -11,6 +11,7 @@ using GuildID = System.Int64;
 
 [AlwaysUpdateSystem]
 [UpdateInGroup(typeof(FieldInitializeSystemGroup))]
+[UpdateAfter(typeof(FieldInitializeSystem))]
 //--------------------------------------------------------------------
 // Class: AreaUpdateSystem 
 // Desc : 연맹영역
