@@ -11,7 +11,7 @@
 
 ## Youtube
 
-https://youtu.be/ku_thRxLXPw
+[![Video Label](https://img.youtube.com/vi/ku_thRxLXPw/0.jpg)](https://youtu.be/ku_thRxLXPw)
 
 ## Compile
 
