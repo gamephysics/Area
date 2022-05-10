@@ -1,4 +1,4 @@
-﻿using Unity.Entities;
+using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Collections;
 
@@ -11,7 +11,7 @@ using UnityEngine;
 // Class: FieldMeshLineSystem 
 // Desc : 연맹영역 관리자
 //--------------------------------------------------------------------
-public class FieldMeshLineSystem : SystemBase
+public partial class FieldMeshLineSystem : SystemBase
 {
     private     EndSimulationEntityCommandBufferSystem m_EntityCommandBufferSystem;
 

@@ -1,4 +1,4 @@
-﻿using Unity.Entities;
+using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Collections;
 
@@ -13,7 +13,7 @@ using CORE;
 // Class: FieldMeshRenderSystem 
 // Desc : Line Mesh Game Object 생성 관리 
 //--------------------------------------------------------------------
-public class FieldMeshRenderSystem : SystemBase
+public partial class FieldMeshRenderSystem : SystemBase
 {
     //=======================================================================================
     // GRAPHIC

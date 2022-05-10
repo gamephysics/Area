@@ -1,4 +1,4 @@
-﻿using Unity.Entities;
+using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Collections;
 
@@ -16,7 +16,7 @@ using GuildID = System.Int64;
 // Class: AreaUpdateSystem 
 // Desc : 연맹영역
 //--------------------------------------------------------------------
-public class AreaUpdateSystem : SystemBase
+public partial class AreaUpdateSystem : SystemBase
 {
     protected override void OnUpdate()
     {

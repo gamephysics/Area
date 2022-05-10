@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine;
 using Unity.Entities;
 
@@ -6,7 +6,7 @@ using Unity.Entities;
 /// !!! 시스템 최초 기동 위치 !!!
 /// </summary>
 [UpdateInGroup(typeof(FieldInitializeSystemGroup))]
-public class FieldInitializeSystem : SystemBase
+public partial class FieldInitializeSystem : SystemBase
 {
     // 모바일에서 크래쉬 발생하여 DOTS 내부에서 하는 부분을 디파인 정의로 초기화 변경처리
 #if UNITY_DISABLE_AUTOMATIC_SYSTEM_BOOTSTRAP_RUNTIME_WORLD

@@ -1,4 +1,4 @@
-﻿using Unity.Entities;
+using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Collections;
 
@@ -14,7 +14,7 @@ using GuildID = System.Int64;
 // Class: AreaRegionSystem 
 // Desc : AreaGruop의 Area 들로 연맹영억의 LINE POINT 생성 (Outline,HoleLines)
 //--------------------------------------------------------------------
-public class AreaPointLineSystem : SystemBase
+public partial class AreaPointLineSystem : SystemBase
 {
     private BeginSimulationEntityCommandBufferSystem m_EntityCommandBufferSystem;
 
@@ -111,10 +111,10 @@ public class AreaPointLineSystem : SystemBase
                     AreaElement area = Areas[g];
 
                     // AREA의 4 꼭지점 좌표의 INDEX를 얻어온다.
-                    Int32 xIndex1 = XPoints.IndexOf<int>(area.m_Rect.xMin); if (xIndex1 < 0) continue;  // ERROR
-                    Int32 xIndex2 = XPoints.IndexOf<int>(area.m_Rect.xMax); if (xIndex2 < 0) continue;  // ERROR
-                    Int32 yIndex1 = YPoints.IndexOf<int>(area.m_Rect.yMin); if (yIndex1 < 0) continue;  // ERROR
-                    Int32 yIndex2 = YPoints.IndexOf<int>(area.m_Rect.yMax); if (yIndex2 < 0) continue;  // ERROR
+                    Int32 xIndex1 = XPoints.IndexOf<int, int>(area.m_Rect.xMin); if (xIndex1 < 0) continue;  // ERROR
+                    Int32 xIndex2 = XPoints.IndexOf<int, int>(area.m_Rect.xMax); if (xIndex2 < 0) continue;  // ERROR
+                    Int32 yIndex1 = YPoints.IndexOf<int, int>(area.m_Rect.yMin); if (yIndex1 < 0) continue;  // ERROR
+                    Int32 yIndex2 = YPoints.IndexOf<int, int>(area.m_Rect.yMax); if (yIndex2 < 0) continue;  // ERROR
 
                     //==========================================================================
                     // 5. 줄어든 차원의 GRID에 영역의 소유를 설정합니다.

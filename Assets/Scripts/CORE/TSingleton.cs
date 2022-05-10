@@ -13,17 +13,6 @@ namespace CORE
 	public abstract class TSingleton<TClass>
 		where TClass : class
 	{
-#if UNITY_EDITOR && UNITY_2019_3_OR_NEWER
-		/// <summary>
-		/// 스크립트 캐싱정보 날리는 처리를 위한 특성
-		/// : ScriptCachesCleaner 클래스 쪽 주석 참조
-		/// </summary>
-		[CleanupScriptCachesMethod]
-		static void CleanupScriptCachesBeforePlayMode()
-		{
-			m_lzInstance = new Lazy<TClass>(() => CreateInstanceInternal());
-		}
-#endif
 		private static readonly object _LOCK = new object();
 
 		private static Lazy<TClass> m_lzInstance = new Lazy<TClass>(() => CreateInstanceInternal());

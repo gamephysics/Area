@@ -1,4 +1,4 @@
-﻿using Unity.Entities;
+using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Collections;
 
@@ -15,7 +15,7 @@ using GuildID = System.Int64;
 // Class: AreaRegionSystem 
 // Desc : AreaGruop의 Area 들로 연맹영억의 LINE POINT 생성 (Outline,HoleLines)
 //--------------------------------------------------------------------
-public class FleetUpdateSystem : SystemBase
+public partial class FleetUpdateSystem : SystemBase
 {
     protected override void OnUpdate()
     {
